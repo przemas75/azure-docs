@@ -15,7 +15,7 @@ ms.devlang: NA
 ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
-ms.date: 04/27/2017
+ms.date: 08/16/2018
 ms.author: sedusch
 
 ---
@@ -120,13 +120,13 @@ SAP NetWeaver requires shared storage for the transport and profile directory. R
 
 ## Setting up (A)SCS
 
-You can either use an Azure Template from github to deploy all required Azure resources, including the virtual machines, availability set and load balancer or you can deploy the resources manually.
+You can either use an Azure Template from GitHub to deploy all required Azure resources, including the virtual machines, availability set and load balancer or you can deploy the resources manually.
 
 ### Deploy Linux via Azure Template
 
 The Azure Marketplace contains an image for SUSE Linux Enterprise Server for SAP Applications 12 that you can use to deploy new virtual machines. The marketplace image contains the resource agent for SAP NetWeaver.
 
-You can use one of the quickstart templates on github to deploy all required resources. The template deploys the virtual machines, the load balancer, availability set etc.
+You can use one of the quickstart templates on GitHub to deploy all required resources. The template deploys the virtual machines, the load balancer, availability set etc.
 Follow these steps to deploy the template:
 
 1. Open the [ASCS/SCS Multi SID template][template-multisid-xscs] or the [converged template][template-converged] on the Azure portal
@@ -368,7 +368,7 @@ The following items are prefixed with either **[A]** - applicable to all nodes, 
      params binfile="/usr/bin/nc" cmdline_options="-l -k 620<b>00</b>" \
      op monitor timeout=20s interval=10 depth=0
    
-   sudo crm configure group g-<b>NW1</b>_ASCS nc_<b>NW1</b>_ASCS vip_<b>NW1</b>_ASCS \
+   sudo crm configure group g-<b>NW1</b>_ASCS fs_<b>NW1</b>_ASCS nc_<b>NW1</b>_ASCS vip_<b>NW1</b>_ASCS \
       meta resource-stickiness=3000
    </code></pre>
 
